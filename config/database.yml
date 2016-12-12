@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  host: localhost
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: college_development
+
+test:
+  <<: *default
+  database: college_test
+
+#TODO :- Update database name for production
+production:
+  <<: *default
+  database: college_production
